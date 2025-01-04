@@ -1,4 +1,5 @@
 import React from 'react'
+import RazorpayButton from './RazorPayButton'
 
 export default function Profile() {
   return (
@@ -23,6 +24,8 @@ export default function Profile() {
     <button class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600">Get in Touch</button>
   </div>
 </div>
+      <RazorpayButton></RazorpayButton>
+
     </>
   )
 }

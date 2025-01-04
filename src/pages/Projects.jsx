@@ -6,7 +6,7 @@ export default function Projects() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', 'Web Development', 'Mobile Apps', 'Backend', 'DevOps'];
+  const categories = ['All', 'Web Development', 'Mobile Apps', 'Backend'];
 
   const projects = [
     {
@@ -31,7 +31,7 @@ export default function Projects() {
       title: "Project Four",
       description: "Description for project four.",
       imageUrl: "https://via.placeholder.com/150",
-      category: "DevOps"
+      category: "Meow"
     },
     {
       title: "Project Five",
