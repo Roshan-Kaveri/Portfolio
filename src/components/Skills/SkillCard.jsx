@@ -1,22 +1,32 @@
-import React from 'react'
+import React from 'react';
 
-export default function SkillCard({ imageUrl, skillName }) {
+export default function SkillCard({ Icon, skillName }) {
   return (
-    <div className="relative group p-4 cursor-pointer">
-      <div className="flex gap-6 items-center hover:scale-105 transition-all duration-300 p-3 rounded-xl border border-slate-700/30 hover:border-[#6b8ad1]/30">
-        <div className="w-[64px] h-[64px] flex items-center justify-center group-hover:animate-bounce"
-          style={{
-            backgroundImage: `url('${imageUrl}')`,
-            backgroundSize: "80%",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center center"
-          }}>
-        </div>
-        <div className="roboto font-bold text-[20px] flex items-center tracking-wider text-[#6b8ad1] group-hover:text-[#8aa9e0] transition-all duration-300 group-hover:translate-x-2 group-hover:tracking-widest">
-          {skillName}
-        </div>
+    <div className="flex items-center border rounded-sm overflow-hidden shadow">
+      <div className="p-4 bg-green-400">
+        {Icon ? (
+          <Icon className="h-12 w-12 text-white" />
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-12 w-12 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+        )}
       </div>
-      <div className="absolute inset-0 bg-[#6b8ad1]/5 blur-3xl rounded-full scale-75 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
+      <div className="px-4 text-gray-100">
+        <h3 className="text-sm tracking-wider">Skill</h3>
+        <p className="text-2xl">{skillName || 'Skill Name'}</p>
+      </div>
     </div>
-  )
+  );
 }

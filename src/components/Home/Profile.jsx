@@ -25,7 +25,7 @@ export default function Profile() {
   </div>
 </div>
       <RazorpayButton></RazorpayButton>
-
+      
     </>
   )
 }

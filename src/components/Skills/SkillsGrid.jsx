@@ -1,41 +1,43 @@
-import React, { useState } from 'react'
-import SkillCard from './SkillCard'
+import React, { useState } from 'react';
+import SkillCard from './SkillCard';
+import { SiJavascript, SiPython, SiC, SiReact, SiNodedotjs, SiPostgresql, SiTensorflow, SiFigma, SiCanva } from 'react-icons/si';
+import { Java, PostgreSQL, Python, React as R , NodeJs, JavaScript } from 'developer-icons'; // Import developer-icons
 
 export default function SkillsGrid() {
-  const [selectedCategory, setSelectedCategory] = useState('All')
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   const skills = {
     Languages: [
-      { name: 'JavaScript', imageUrl: 'https://www.javascript.com/etc.clientlibs/pluralsight/clientlibs/clientlib-main/resources/images/js-logo.png' },
-      { name: 'Python', imageUrl: 'https://www.python.org/static/community_logos/python-logo-generic.svg' },
-      { name: 'Java', imageUrl: 'https://www.oracle.com/a/tech/img/cb88-java-logo-001.jpg' },
-      { name: 'Embedded C', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg' },
+      { name: 'JavaScript', Icon: JavaScript || SiJavascript }, // Fallback to react-icons if developer-icons doesn't have it
+      { name: 'Python', Icon: Python || SiPython },
+      { name: 'Java', Icon: Java  },  // If Java is not available in dev-icons, use react-icons fallback
+      { name: 'Embedded C', Icon: SiC },
     ],
     'Web Development': [
-      { name: 'ReactJS', imageUrl: 'https://reactjs.org/logo-og.png' },
-      { name: 'Node.js', imageUrl: 'https://nodejs.org/static/images/logo.svg' },
-      { name: 'SQL & PostgreSQL', imageUrl: 'https://www.postgresql.org/media/img/about/press/elephant.png' },
+      { name: 'ReactJS', Icon: R || SiReact },
+      { name: 'Node.js', Icon: NodeJs || SiNodedotjs },
+      { name: 'PostgreSQL', Icon: PostgreSQL || SiPostgresql },
     ],
     'Other Skills': [
-      { name: 'Machine Learning', imageUrl: 'https://img.icons8.com/cotton/2x/machine-learning.png' },
-      { name: 'Figma', imageUrl: 'https://cdn.sanity.io/images/599r6htc/localized/46a76c802176eb17b04e12108de7e7e0f3736dc6-1024x1024.png' },
-      { name: 'Canva', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg' },
-    ]
-  }
+      { name: 'Machine Learning', Icon: SiTensorflow },
+      { name: 'Figma', Icon: SiFigma },
+      { name: 'Canva', Icon: SiCanva },
+    ],
+  };
 
-  const allSkills = selectedCategory === 'All' 
-    ? Object.values(skills).flat()
-    : skills[selectedCategory]
+  const allSkills =
+    selectedCategory === 'All'
+      ? Object.values(skills).flat()
+      : skills[selectedCategory];
 
   return (
     <div className="container mx-auto px-4 py-8">
+      {/* Category Buttons */}
       <div className="flex flex-wrap justify-center gap-4 mb-8">
         <button
           onClick={() => setSelectedCategory('All')}
           className={`px-4 py-2 rounded-lg transition-all duration-300 
-          ${selectedCategory === 'All'
-            ? 'bg-[#5272b8] text-white' 
-            : 'bg-transparent text-slate-300 border border-slate-600 hover:bg-slate-800/50'}`}
+          ${selectedCategory === 'All' ? 'bg-[#5272b8] text-white' : 'bg-transparent text-slate-300 border border-slate-600 hover:bg-slate-800/50'}`}
         >
           All
         </button>
@@ -44,24 +46,19 @@ export default function SkillsGrid() {
             key={category}
             onClick={() => setSelectedCategory(category)}
             className={`px-4 py-2 rounded-lg transition-all duration-300 
-            ${selectedCategory === category 
-              ? 'bg-[#5272b8] text-white' 
-              : 'bg-transparent text-slate-300 border border-slate-600 hover:bg-slate-800/50'}`}
+            ${selectedCategory === category ? 'bg-[#5272b8] text-white' : 'bg-transparent text-slate-300 border border-slate-600 hover:bg-slate-800/50'}`}
           >
             {category}
           </button>
         ))}
       </div>
 
+      {/* Skill Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {allSkills.map((skill) => (
-          <SkillCard
-            key={skill.name}
-            imageUrl={skill.imageUrl}
-            skillName={skill.name}
-          />
+          <SkillCard key={skill.name} Icon={skill.Icon} skillName={skill.name} />
         ))}
       </div>
     </div>
-  )
+  );
 }
