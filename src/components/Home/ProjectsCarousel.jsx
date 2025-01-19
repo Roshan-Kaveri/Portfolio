@@ -60,7 +60,7 @@ export default function ProjectCarousel() {
   return (
     <> <h2 className="text-3xl text-center font-bold mb-8 text-white">My Projects</h2>
     <div
-      className="overflow-hidden relative w-full max-w-4xl mx-auto"
+      className="overflow-hidden relative w-full max-w-6xl mx-auto"
       onMouseEnter={() => setIsHovered(true)} 
       onMouseLeave={() => setIsHovered(false)} 
     >
