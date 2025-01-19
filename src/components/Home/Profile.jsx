@@ -9,20 +9,21 @@ export default function Profile() {
 
         <div className="flex">
           {/* Replace with your logo image or text */}
-          <h1 className="text-6xl engagement-regular text-[#5272b8]">R</h1>
-          <h1 className="text-6xl engagement-regular text-slate-300">K</h1>
+          <h1 className="text-8xl engagement-regular text-[#5272b8]">R</h1>
+          <h1 className="text-8xl engagement-regular text-slate-300">K</h1>
         </div>
 
-        <h1 className="text-2xl font-bold mb-2">
+        <h1 className="text-4xl font-bold mb-2">
           Hey, I'm{' '}
           <span className="bg-gradient-to-r from-[#5272b8] to-[#779ffc] bg-clip-text text-transparent">
             Roshan Kumar
           </span>
         </h1>
-        <p className="text-center max-w-md mb-2">
+        <pre className="text-center text-2xl max-w-md mb-2">
           Pre-Final Year Student at MIT Manipal
-          <p>Freelance Plugin Developer</p>
-        </p>
+          <br></br>
+          Freelance Plugin Developer
+        </pre>
         <div className="text-center mb-2">
         {/* Social Links */}
         
