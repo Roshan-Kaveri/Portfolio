@@ -16,6 +16,7 @@ export default function NavigationBar({ activeElement }) {
         <Link to="/skills" className={`text-lg px-1 hover:underline ${activeElement === 'Skills' ? 'active' : ''}`}>Skills</Link>
         <Link to="/projects" className={`text-lg px-1 hover:underline ${activeElement === 'Projects' ? 'active' : ''}`}>Projects</Link>
         <Link to="/experience" className={`text-lg px-1 hover:underline ${activeElement === 'Experience' ? 'active' : ''}`}>Experience</Link>
+        <Link to="/certificates" className={`text-lg px-1 hover:underline ${activeElement === 'Certificates' ? 'active' : ''}`}>Certificates</Link>
         <ResumeDownload></ResumeDownload>
       </div>
     </div>

@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function SkillCard({ Icon, skillName }) {
+  const [isTextVisible, setIsTextVisible] = useState(true);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      // Check if the card's width is smaller than a threshold (e.g., 150px)
+      if (cardRef.current.offsetWidth < 150) {
+        setIsTextVisible(false); // Hide text if card is too small
+      } else {
+        setIsTextVisible(true); // Show text if card has enough space
+      }
+    });
+
+    resizeObserver.observe(cardRef.current);
+
+    // Cleanup observer on unmount
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
   return (
-    <div className="flex items-center border rounded-sm overflow-hidden shadow">
+    <div ref={cardRef} className="flex items-center border w-72 rounded-sm overflow-hidden shadow">
       <div className="p-4 bg-green-400">
         {Icon ? (
           <Icon className="h-12 w-12 text-white" />
@@ -23,10 +44,14 @@ export default function SkillCard({ Icon, skillName }) {
           </svg>
         )}
       </div>
-      <div className="px-4 text-gray-100">
-        <h3 className="text-sm tracking-wider">Skill</h3>
-        <p className="text-2xl">{skillName || 'Skill Name'}</p>
-      </div>
+  
+        {isTextVisible && (
+          <div className="px-4 text-gray-100">
+            <h3 className="text-sm ">Skill</h3>
+            <p className="text-2xl">{skillName || 'Skill Name'}</p>
+          </div>
+        )}
+      
     </div>
   );
 }

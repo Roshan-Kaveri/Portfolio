@@ -1,16 +1,17 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState } from 'react';
 import NavigationBar from '../components/General/NavigationBar';
 import ProjectCard from '../components/Projects/ProjectCard';
+import CertifacteCard from '../components/Certifiactions/CerficateCard';
 
-export default function Projects() {
+export default function Certificates() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const categories = ['All', 'Web Development', 'Mobile Apps', 'Backend'];
 
-  const projects = [
+  const certificates = [
     {
-      title: "DragonTagsV2",
+      title: "CC",
       description: "Come up with awesome tags to display alongside a player's name during chat!",
       imageUrl: "https://camo.githubusercontent.com/14c012c56b4e2dd2acc3f8f7e3807a015cd8ceec663cdef0d4f7fb8a0b7d777f/68747470733a2f2f692e706f7374696d672e63632f794e4433427474742f53637265656e73686f742d323032342d31322d32352d3031313535322e706e67",
       category: "Backend"
@@ -41,23 +42,19 @@ export default function Projects() {
     }
   ];
 
-  const filteredProjects = projects.filter(project =>
+  const filteredcertificates = certificates.filter(project =>
     project.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
     (selectedCategory === 'All' || project.category === selectedCategory)
   );
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0)
-});
-
   return (
     <>
-      <NavigationBar activeElement="Projects" />
+      <NavigationBar activeElement="Certificates" />
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col items-center gap-6 mb-8">
           <input
             type="text"
-            placeholder="Search projects..."
+            placeholder="Search Certificates..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="p-3 border-2 border-[#5272b8] bg-transparent rounded-lg w-full max-w-md
@@ -80,8 +77,8 @@ export default function Projects() {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard
+          {filteredcertificates.map((project, index) => (
+            <CertifacteCard
               key={index}
               title={project.title}
               description={project.description}
