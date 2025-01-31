@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
 export default function SkillCard({ Icon, skillName }) {
   const [isTextVisible, setIsTextVisible] = useState(true);
@@ -23,7 +23,10 @@ export default function SkillCard({ Icon, skillName }) {
   }, []);
 
   return (
-    <div ref={cardRef} className="flex items-center border w-72 rounded-sm overflow-hidden shadow">
+    <div
+      ref={cardRef}
+      className="flex items-center border w-72 rounded-sm overflow-hidden shadow"
+    >
       <div className="p-4 bg-green-400">
         {Icon ? (
           <Icon className="h-12 w-12 text-white" />
@@ -44,14 +47,13 @@ export default function SkillCard({ Icon, skillName }) {
           </svg>
         )}
       </div>
-  
-        {isTextVisible && (
-          <div className="px-4 text-gray-100">
-            <h3 className="text-sm ">Skill</h3>
-            <p className="text-2xl">{skillName || 'Skill Name'}</p>
-          </div>
-        )}
-      
+
+      {isTextVisible && (
+        <div className="px-4 text-gray-100">
+          <h3 className="text-sm ">Skill</h3>
+          <p className="text-2xl">{skillName || "Skill Name"}</p>
+        </div>
+      )}
     </div>
   );
 }

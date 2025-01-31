@@ -1,6 +1,5 @@
 import TimelineItem from "./TimelineItem";
 
-
 const Timeline = ({ data }) => (
   <div className="relative mx-auto w-full max-w-4xl mt-10">
     {data.map((item, index) => (
@@ -9,4 +8,4 @@ const Timeline = ({ data }) => (
   </div>
 );
 
-export default Timeline
+export default Timeline;
