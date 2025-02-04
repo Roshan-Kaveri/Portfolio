@@ -20,14 +20,14 @@ export default function Profile() {
         >
           <div className="flex">
             {/* Replace with your logo image or text */}
-            <h1 className="text-8xl engagement-regular text-[#5272b8]">R</h1>
-            <h1 className="text-8xl engagement-regular text-slate-300">K</h1>
+            <h1 className="text-9xl engagement-regular text-[#5272b8]">R</h1>
+            <h1 className="text-9xl engagement-regular text-slate-300">K</h1>
           </div>
 
-          <h1 className="text-4xl font-bold mb-2">
+          <h1 className="text-6xl  mb-2">
             Hey, I'm{" "}
-            <span className="bg-gradient-to-r from-[#5272b8] to-[#779ffc] bg-clip-text text-transparent">
-              Roshan Kumar
+            <span className="bg-gradient-to-r from-[#779ffc] to-[#779ffc] poppins-eb bg-clip-text text-transparent">
+              Roshan Kumar.
             </span>
           </h1>
           <pre className="text-center text-2xl max-w-md mb-2">

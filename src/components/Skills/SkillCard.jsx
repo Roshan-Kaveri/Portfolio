@@ -27,7 +27,7 @@ export default function SkillCard({ Icon, skillName }) {
       ref={cardRef}
       className="flex items-center border w-72 rounded-sm overflow-hidden shadow"
     >
-      <div className="p-4 bg-green-400">
+      <div className="p-4 bg-[#639efb]">
         {Icon ? (
           <Icon className="h-12 w-12 text-white" />
         ) : (

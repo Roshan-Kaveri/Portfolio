@@ -92,8 +92,9 @@ const TestimonialCarousel = () => {
           transition={{ duration: 0.5 }}
         >
       <h2 className="text-3xl text-center font-bold mb-1 mt-10 text-white">
-        Testimonials
+      User Reviews
       </h2>
+      
       <div
         className="overflow-hidden relative w-full max-w-6xl mx-auto p-6 rounded-lg"
         onMouseEnter={() => setIsHovered(true)}
