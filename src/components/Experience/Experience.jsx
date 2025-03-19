@@ -14,33 +14,43 @@ const ExperienceCard = () => {
   
   const educationData = [
     {
-      date: "2022 - present",
+      date: "2022 - Present",
       title: "Manipal Institute of Technology",
-      description:
-        "B.Tech in Information Technology | CGPA: 7.76 (Current) - 5th Semester",
+      description: "B.Tech in Information Technology\nCGPA: 7.95 (6th Semester)",
     },
     {
-      date: "2020",
+      date: "2020 - 2022",
       title: "Bhandarkars' Arts & Science College",
-      description:
-        "Pre University - PCMB | Score: 90% in 12th Board Examinations",
+      description: "Pre-University (PCMB)\n12th Board Score: 90%",
+    },
+    {
+      date: "2019",
+      title: "Sri Venkataramana English Medium School",
+      description: "10th Board Score: 97%",
     },
   ];
+  
 
   const workData = [
     {
-      date: "2023 - present",
-      title: "Software Developer Intern",
+      date: "Dec 2024 - Jan 2025",
+      title: "Full Stack Intern",
       description:
-        "Worked on developing web applications using React and Node.js.",
+        "Accolade Tech Solutions\n" +
+        "Built a web-based library system using MERN stack. " +
+        "Integrated authentication and payment gateway for secure transactions.",
     },
     {
-      date: "2022",
-      title: "Freelance Developer",
+      date: "Dec 2022 - Present",
+      title: "Freelance Plugin Developer",
       description:
-        "Developed web applications and websites for various clients.",
+        "Hmmbo Studios \n" +
+        "Developed and sold custom Spigot plugins (10K+ downloads, 500 sales). " +
+        "Integrated advanced features using plugin APIs.",
     },
   ];
+  
+  
 
   return (
     <motion.div

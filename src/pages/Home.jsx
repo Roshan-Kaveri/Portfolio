@@ -24,8 +24,8 @@ export default function Home() {
 
       <ExperienceCard></ExperienceCard>
       <br />
-      <TestimonialCarousel></TestimonialCarousel>
-      <br />
+      {/* <TestimonialCarousel></TestimonialCarousel>
+      <br /> */}
       <Footer></Footer>
     </>
   );

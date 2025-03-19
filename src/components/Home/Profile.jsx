@@ -41,7 +41,7 @@ export default function Profile() {
 
           <div className="flex justify-center items-center space-x-4">
             <motion.a
-              href="https://github.com/roshankumar"
+              href="https://github.com/Roshan-Kaveri"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0, y: "-50%" }}
@@ -60,7 +60,7 @@ export default function Profile() {
               <FaGithub className="text-4xl text-[#fff]" />
             </motion.a>
             <motion.a
-              href="https://github.com/roshankumar"
+              href="https://www.geeksforgeeks.org/user/roshan_kaveri/"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0, y: "-50%" }}
@@ -85,7 +85,7 @@ export default function Profile() {
             </motion.a>
     
             <motion.a
-              href="https://github.com/roshankumar"
+              href="https://www.linkedin.com/in/roshan-k-kumar/"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0, y: "-50%" }}
