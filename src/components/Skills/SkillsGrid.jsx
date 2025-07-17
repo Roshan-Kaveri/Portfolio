@@ -34,7 +34,7 @@ export default function SkillsGrid() {
       </div>
 
       {/* Skill Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-20 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-2 justify-items-center lg:grid-cols-3 lg:mx-20 mx-10 gap-6">
         {allSkills.map((skill) => (
           <SkillCard
             key={skill.name}

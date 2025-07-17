@@ -3,9 +3,8 @@
 import React from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import skills from "../data/skillsdata"; // Update path if needed
-import SkillCard from "./SkillCard"; // Update path if needed
-import { div } from "motion/react-client";
+import skills from "../data/skillsdata";
+import SkillCard from "./SkillCard";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -15,6 +14,7 @@ const SkillCarousel = () => {
 
   const half = Math.ceil(allSkills.length / 2);
   const rows = [allSkills.slice(0, half), allSkills.slice(half)];
+
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.5,
@@ -47,12 +47,19 @@ const SkillCarousel = () => {
     </motion.div>
   );
 };
+
 const animation = { duration: 10000, easing: (t) => t };
+
 const SliderRow = ({ skills, reverse }) => {
   const [sliderRef] = useKeenSlider({
     loop: true,
     rtl: reverse,
     renderMode: "performance",
+    breakpoints: {
+      "(max-width: 768px)": {
+        slides: { perView: 3, spacing: 12 },
+      },
+    },
     slides: {
       perView: 4,
       spacing: 16,
@@ -69,7 +76,7 @@ const SliderRow = ({ skills, reverse }) => {
   });
 
   return (
-    <div className="mx-10">
+    <div className="mx-2 sm:mx-10">
       <div ref={sliderRef} className="keen-slider">
         {skills.map((skill, i) => (
           <div key={i} className="keen-slider__slide">

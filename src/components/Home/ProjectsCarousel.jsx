@@ -18,11 +18,21 @@ export default function ProjectCarousel() {
   const [currentIndex, setCurrentIndex] = useState(totalProjects);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.5,
   });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (isHovered) return;
@@ -56,7 +66,8 @@ export default function ProjectCarousel() {
   };
 
   const calculateTransform = () => {
-    return `translateX(-${(currentIndex * 100) / 3}%)`;
+    const slideWidth = isMobile ? 100 : 100 / 3;
+    return `translateX(-${currentIndex * slideWidth}%)`;
   };
 
   return (
@@ -95,17 +106,18 @@ export default function ProjectCarousel() {
 
         <button
           onClick={handlePrev}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2"
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 z-10"
         >
           &#8249;
         </button>
         <button
           onClick={handleNext}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2"
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 z-10"
         >
           &#8250;
         </button>
       </div>
+
       <div className="flex justify-center mt-8">
         <Link
           to="/projects"

@@ -6,7 +6,7 @@ export default function SkillCard({ Icon, skillName }) {
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
-      if (cardRef.current.offsetWidth < 150) {
+      if (window.innerWidth <= 1024) {
         setIsTextVisible(false);
       } else {
         setIsTextVisible(true);
@@ -25,9 +25,9 @@ export default function SkillCard({ Icon, skillName }) {
   return (
     <div
       ref={cardRef}
-      className="flex items-center h-full w-full rounded-md overflow-hidden border bg-zinc-900 text-white shadow"
+      className="flex items-center h-full lg:w-full w-max max-w-[260px] rounded-md overflow-hidden border bg-zinc-900 text-white shadow transition-all duration-300"
     >
-      <div className="p-4 bg-[#639efb] flex items-center justify-center">
+      <div className="p-4 bg-[#639efb] flex items-center justify-center min-w-[64px]">
         {Icon ? (
           <Icon className="h-12 w-12 text-white" />
         ) : (
