@@ -27,8 +27,8 @@ export default function Profile() {
               Roshan Kumar.
             </span>
           </h1>
-          <pre className="text-lg sm:text-xl md:text-2xl max-w-md mb-2">
-            Pre-Final Year Student at MIT Manipal
+          <pre className="text-lg sm:text-lg md:text-xl max-w-md mb-2">
+            Final Year Student at MIT Manipal
             <br />
             Freelance Plugin Developer
           </pre>
