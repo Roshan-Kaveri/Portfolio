@@ -1,46 +1,9 @@
 import React, { useState } from "react";
 import SkillCard from "./SkillCard";
-import {
-  SiJavascript,
-  SiPython,
-  SiC,
-  SiReact,
-  SiNodedotjs,
-  SiPostgresql,
-  SiTensorflow,
-  SiFigma,
-  SiCanva,
-} from "react-icons/si";
-import {
-  Java,
-  PostgreSQL,
-  Python,
-  React as R,
-  NodeJs,
-  JavaScript,
-} from "developer-icons"; // Import developer-icons
+import skills from "../data/skillsdata"; // Update the path if needed
 
 export default function SkillsGrid() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const skills = {
-    Languages: [
-      { name: "JavaScript", Icon: JavaScript || SiJavascript }, // Fallback to react-icons if developer-icons doesn't have it
-      { name: "Python", Icon: Python || SiPython },
-      { name: "Java", Icon: Java }, // If Java is not available in dev-icons, use react-icons fallback
-      { name: "Embedded C", Icon: SiC },
-    ],
-    "Web Development": [
-      { name: "ReactJS", Icon: R || SiReact },
-      { name: "Node.js", Icon: NodeJs || SiNodedotjs },
-      { name: "PostgreSQL", Icon: PostgreSQL || SiPostgresql },
-    ],
-    "Other Skills": [
-      { name: "Machine Learning", Icon: SiTensorflow },
-      { name: "Figma", Icon: SiFigma },
-      { name: "Canva", Icon: SiCanva },
-    ],
-  };
+  const [selectedCategory, setSelectedCategory] = useState("Languages");
 
   const allSkills =
     selectedCategory === "All"
@@ -71,7 +34,7 @@ export default function SkillsGrid() {
       </div>
 
       {/* Skill Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-20 gap-6">
         {allSkills.map((skill) => (
           <SkillCard
             key={skill.name}

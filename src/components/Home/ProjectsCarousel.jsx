@@ -18,7 +18,7 @@ export default function ProjectCarousel() {
   const [currentIndex, setCurrentIndex] = useState(totalProjects);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  
+
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.5,
@@ -67,9 +67,9 @@ export default function ProjectCarousel() {
       transition={{ duration: 0.5 }}
     >
       <h2 className="text-3xl text-center font-bold mb-8 text-white">
-        My Projects
+        Things I Made
       </h2>
-    
+
       <div
         className="overflow-hidden relative w-full max-w-6xl mx-auto"
         onMouseEnter={() => setIsHovered(true)}

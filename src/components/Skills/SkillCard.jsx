@@ -6,17 +6,17 @@ export default function SkillCard({ Icon, skillName }) {
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
-      // Check if the card's width is smaller than a threshold (e.g., 150px)
       if (cardRef.current.offsetWidth < 150) {
-        setIsTextVisible(false); // Hide text if card is too small
+        setIsTextVisible(false);
       } else {
-        setIsTextVisible(true); // Show text if card has enough space
+        setIsTextVisible(true);
       }
     });
 
-    resizeObserver.observe(cardRef.current);
+    if (cardRef.current) {
+      resizeObserver.observe(cardRef.current);
+    }
 
-    // Cleanup observer on unmount
     return () => {
       resizeObserver.disconnect();
     };
@@ -25,9 +25,9 @@ export default function SkillCard({ Icon, skillName }) {
   return (
     <div
       ref={cardRef}
-      className="flex items-center border w-72 rounded-sm overflow-hidden shadow"
+      className="flex items-center h-full w-full rounded-md overflow-hidden border bg-zinc-900 text-white shadow"
     >
-      <div className="p-4 bg-[#639efb]">
+      <div className="p-4 bg-[#639efb] flex items-center justify-center">
         {Icon ? (
           <Icon className="h-12 w-12 text-white" />
         ) : (
@@ -49,9 +49,9 @@ export default function SkillCard({ Icon, skillName }) {
       </div>
 
       {isTextVisible && (
-        <div className="px-4 text-gray-100">
-          <h3 className="text-sm ">Skill</h3>
-          <p className="text-2xl">{skillName || "Skill Name"}</p>
+        <div className="px-4">
+          <h3 className="text-sm text-zinc-400">Skill</h3>
+          <p className="text-lg font-semibold">{skillName || "Skill Name"}</p>
         </div>
       )}
     </div>

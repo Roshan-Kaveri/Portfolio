@@ -25,7 +25,6 @@ export default function Profile() {
           </div>
 
           <h1 className="text-6xl  mb-2">
-            Hey, I'm{" "}
             <span className="bg-gradient-to-r from-[#779ffc] to-[#779ffc] poppins-eb bg-clip-text text-transparent">
               Roshan Kumar.
             </span>
@@ -81,9 +80,8 @@ export default function Profile() {
                 alt="GFG"
                 className="w-16 h-16 object-cover rounded-full mx-auto"
               />
-
             </motion.a>
-    
+
             <motion.a
               href="https://www.linkedin.com/in/roshan-k-kumar/"
               target="_blank"
@@ -101,19 +99,14 @@ export default function Profile() {
                 ease: "easeOut", // Smooth landing feel
               }}
             >
-              
-
               <FaLinkedin className="text-4xl text-[#2fbdff]" />
-              </motion.a>
+            </motion.a>
 
             {/* Image */}
           </div>
         </div>
       </div>
-      <div>
-      
-    </div>
-
+      <div></div>
     </>
   );
 }

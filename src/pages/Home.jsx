@@ -7,13 +7,11 @@ import TestimonialCarousel from "../components/Home/Testimonial";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 import * as motion from "motion/react-client";
+import SkillCarousel from "../components/Skills/SkillCarousel";
 
 export default function Home() {
   return (
     <>
-    
-    
-
       <NavigationBar activeElement="Home"></NavigationBar>
 
       <Profile></Profile>
@@ -21,11 +19,12 @@ export default function Home() {
       <br />
       <ProjectCarousel></ProjectCarousel>
       <br />
-
+      <SkillCarousel />
+      <br />
       <ExperienceCard></ExperienceCard>
       <br />
-      {/* <TestimonialCarousel></TestimonialCarousel>
-      <br /> */}
+      {/* <TestimonialCarousel></TestimonialCarousel> */}
+      <br />
       <Footer></Footer>
     </>
   );

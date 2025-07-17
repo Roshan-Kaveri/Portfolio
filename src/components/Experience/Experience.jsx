@@ -3,20 +3,20 @@ import Timeline from "./Timeline";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-
 const ExperienceCard = () => {
-  const [activeTab, setActiveTab] = React.useState("education");
-   
+  const [activeTab, setActiveTab] = React.useState("work");
+
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.5,
   });
-  
+
   const educationData = [
     {
       date: "2022 - Present",
       title: "Manipal Institute of Technology",
-      description: "B.Tech in Information Technology\nCGPA: 7.95 (6th Semester)",
+      description:
+        "B.Tech in Information Technology\nCGPA: 7.95 (6th Semester)",
     },
     {
       date: "2020 - 2022",
@@ -29,7 +29,6 @@ const ExperienceCard = () => {
       description: "10th Board Score: 97%",
     },
   ];
-  
 
   const workData = [
     {
@@ -45,45 +44,44 @@ const ExperienceCard = () => {
       title: "Freelance Plugin Developer",
       description:
         "Hmmbo Studios \n" +
-        "Developed and sold custom Spigot plugins (10K+ downloads, 500 sales). " +
+        "Developed and sold custom Spigot plugins (20000+ downloads, 1000 sales). " +
         "Integrated advanced features using plugin APIs.",
     },
   ];
-  
-  
 
   return (
     <motion.div
-    ref={ref}
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-    transition={{ duration: 0.5 }}
-  >
-    <div className="experience-container mx-auto text-center mt-10">
-      <h2 className="text-3xl font-bold mb-8 text-white">My Experience</h2>
-      <div className="flex justify-center mb-8">
-        <button
-          className={`px-4 py-2 mx-2 rounded ${
-            activeTab === "education"
-              ? "bg-[#5272b8] text-white"
-              : "bg-gray-200"
-          }`}
-          onClick={() => setActiveTab("education")}
-        >
-          Education
-        </button>
-        <button
-          className={`px-4 py-2 mx-2 rounded ${
-            activeTab === "work" ? "bg-[#5272b8] text-white" : "bg-gray-200"
-          }`}
-          onClick={() => setActiveTab("work")}
-        >
-          Work
-        </button>
-      </div>
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="experience-container mx-auto text-center mt-10">
+        <h2 className="text-3xl font-bold mb-8 text-white">My Experience</h2>
 
-      <Timeline data={activeTab === "education" ? educationData : workData} />
-    </div>
+        <div className="flex justify-center mb-8">
+          <button
+            className={`px-4 py-2 mx-2 rounded ${
+              activeTab === "work" ? "bg-[#5272b8] text-white" : "bg-gray-200"
+            }`}
+            onClick={() => setActiveTab("work")}
+          >
+            Work
+          </button>
+          <button
+            className={`px-4 py-2 mx-2 rounded ${
+              activeTab === "education"
+                ? "bg-[#5272b8] text-white"
+                : "bg-gray-200"
+            }`}
+            onClick={() => setActiveTab("education")}
+          >
+            Education
+          </button>
+        </div>
+
+        <Timeline data={activeTab === "education" ? educationData : workData} />
+      </div>
     </motion.div>
   );
 };
