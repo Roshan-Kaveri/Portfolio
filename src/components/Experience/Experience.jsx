@@ -32,6 +32,13 @@ const ExperienceCard = () => {
 
   const workData = [
     {
+      date: "Jan 2026 - Present",
+      title: "Associate Developer Intern",
+      description:
+        "SAP LABS WHITEFIELD \n" +
+        "Hoping to contribute to enterprise software solutions. ",
+    },
+    {
       date: "Dec 2024 - Jan 2025",
       title: "Full Stack Intern",
       description:
@@ -40,7 +47,7 @@ const ExperienceCard = () => {
         "Integrated authentication and payment gateway for secure transactions.",
     },
     {
-      date: "Dec 2022 - Present",
+      date: "Dec 2022 - Oct 2025",
       title: "Freelance Plugin Developer",
       description:
         "Hmmbo Studios \n" +

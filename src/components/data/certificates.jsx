@@ -4,6 +4,30 @@ import { link } from "motion/react-client";
 const certificates = [
   // High-value Machine Learning & Web Development Certifications
   {
+    title: "AWS Cloud Technical Essentials",
+    description: "Amazon Web Services (AWS)",
+    imageUrl:
+      "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~L8HY136FHE0Q/CERTIFICATE_LANDING_PAGE~L8HY136FHE0Q.jpeg",
+    category: "Web Development",
+    link: "https://www.coursera.org/account/accomplishments/verify/L8HY136FHE0Q",
+  },
+  {
+    title: "Graph Analytics for Big Data",
+    description: "University of California, San Diego",
+    imageUrl:
+      "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~UN7WJS9G0ZKF/CERTIFICATE_LANDING_PAGE~UN7WJS9G0ZKF.jpeg",
+    category: "Other",
+    link: "https://www.coursera.org/account/accomplishments/verify/UN7WJS9G0ZKF",
+  },
+  {
+    title: "Machine Learning With Big Data",
+    description: "University of California, San Diego",
+    imageUrl:
+      "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~2SFQI8ONSIFU/CERTIFICATE_LANDING_PAGE~2SFQI8ONSIFU.jpeg",
+    category: "Machine Learning",
+    link: "https://www.coursera.org/account/accomplishments/verify/2SFQI8ONSIFU",
+  },
+  {
     title: "Big Data Modeling and Management Systems",
     description: "University of California San Diego",
     imageUrl:
@@ -78,7 +102,7 @@ const certificates = [
     title: "Career Essentials in Software Development",
     description: "Microsoft & LinkedIn",
     imageUrl:
-      "https://media.licdn.com/dms/image/v2/D5622AQFUNaTdqgFXTQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1730213308067?e=1755734400&v=beta&t=9ZLv7GzTR_2eee7EVvtRrjqH-p9TBuphXdYAq4A59JM",
+      "https://media.licdn.com/dms/image/v2/D5622AQHzbUh00sbzsw/feedshare-shrink_1280/feedshare-shrink_1280/0/1730212254484?e=1769040000&v=beta&t=-wE3hHU1L5fwpeHpwIRsabku4J9lPxEcLLYnezRyBe4",
     category: "Web Development",
     link: "https://www.linkedin.com/learning/certificates/c028598a9b97bb0257663f89a1454a323fc85784dd89cdcea8847e765a32b608?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BgBgFRmEwQ8mnS%2F4bx4ehNA%3D%3D",
   },

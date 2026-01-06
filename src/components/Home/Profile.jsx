@@ -30,7 +30,7 @@ export default function Profile() {
           <pre className="text-lg sm:text-lg md:text-xl max-w-md mb-2">
             Final Year Student at MIT Manipal
             <br />
-            Freelance Plugin Developer
+            Intern at SAP LABS WHITEFIELD
           </pre>
         </motion.div>
 
