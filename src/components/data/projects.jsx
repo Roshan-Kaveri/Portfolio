@@ -35,7 +35,7 @@ const projects = [
       "A MERN-based book library system with Razorpay payments and Google authentication.",
     imageUrl: "https://i.postimg.cc/DzgPp1b1/image.png",
     category: "Web Development",
-    link: "https://github.com/Roshan-Kaveri/Online_Library",
+    link: "https://readify.hmmbo.com/",
     carousel: true,
   },
   {
